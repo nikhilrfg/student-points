@@ -1,0 +1,131 @@
+PYTHON STUDENT POINTS CALCULATOR
+Sample Output and Testing Results
+
+========================================
+TEST 1: VALID STUDENT RECORDS
+========================================
+
+Input file: students.txt
+
+File contents:
+John Smith 5
+Anna Boleyn 4.5
+John Smith 2
+Anna Boleyn 11
+Andrew Cox 1.5
+
+Command:
+python students_points.py
+
+Expected terminal output:
+
+Enter student's data filename: students.txt
+Andrew Cox      1.5
+Anna Boleyn     15.5
+John Smith      7.0
+
+Explanation:
+Andrew Cox = 1.5
+Anna Boleyn = 4.5 + 11 = 15.5
+John Smith = 5 + 2 = 7.0
+
+========================================
+TEST 2: REPEATED STUDENT RECORDS
+========================================
+
+Input file: repeated_students.txt
+
+File contents:
+John Smith 5
+John Smith 10
+John Smith 3
+
+Expected terminal output:
+
+Enter student's data filename: repeated_students.txt
+John Smith      18.0
+
+Explanation:
+The program adds all points belonging to the same student.
+
+========================================
+TEST 3: MISSING INPUT FILE
+========================================
+
+Input filename: missing.txt
+
+Expected terminal output:
+
+Enter student's data filename: missing.txt
+I/O error occurred: No such file or directory
+
+Explanation:
+The program catches an IOError when the file cannot be opened.
+
+========================================
+TEST 4: EMPTY INPUT FILE
+========================================
+
+Input file: empty.txt
+
+File contents:
+(Empty file)
+
+Expected terminal output:
+
+Enter student's data filename: empty.txt
+Source file empty
+
+Explanation:
+The program raises the FileEmpty exception because the file contains no lines.
+
+========================================
+TEST 5: INCORRECT NUMBER OF COLUMNS
+========================================
+
+Input file: invalid_columns.txt
+
+File contents:
+John Smith 5
+Anna 10
+
+Expected terminal output:
+
+Enter student's data filename: invalid_columns.txt
+Wrong line #2 in source file: Anna 10
+
+Explanation:
+The second line contains only two columns instead of three.
+
+========================================
+TEST 6: INVALID POINTS VALUE
+========================================
+
+Input file: invalid_points.txt
+
+File contents:
+John Smith 5
+Anna Boleyn abc
+
+Expected terminal output:
+
+Enter student's data filename: invalid_points.txt
+Wrong line #2 in source file: Anna Boleyn abc
+
+Explanation:
+The program cannot convert "abc" into a floating-point number.
+
+========================================
+TESTING SUMMARY
+========================================
+
+Test 1: Valid student records - Expected to pass
+Test 2: Repeated student records - Expected to pass
+Test 3: Missing input file - Expected to pass
+Test 4: Empty input file - Expected to pass
+Test 5: Incorrect columns - Expected to pass
+Test 6: Invalid points - Expected to pass
+
+Note:
+These are sample expected outputs, not recorded test executions.
+Error wording and whitespace may vary by operating system and file contents.
